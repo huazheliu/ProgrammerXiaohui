@@ -42,6 +42,22 @@ public class MyLinkedList {
         }
         size++;
     }
+    
+    **
+     * 链表修改元素
+     * @param data 修改元素
+     * @param index 修改位置
+     */
+    public void modify(int data, int index){
+        if (index < 0 || index > size){
+            throw new IndexOutOfBoundsException("超出链表节点范围！");
+        }
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        temp.data = data;
+    }
 
     /**
      * 链表删除元素
